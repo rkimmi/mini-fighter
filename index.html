@@ -15,9 +15,13 @@
 
 <body>
     <script src="script.js"></script>
+    <div class='status-container'>
     <div id='status' class="status-text">FIGHT</div>
+    <button id='reset' class="reset" onclick="resetBattle()" disabled=true ></button>
+</div>
     <div class="battlefield">
         <div class="player-container">
+            <div id='player1-hp' class="player1-hpbar"></div>
             <div id='player1' class="player-one"></div>
             <div class="health-container">
             <div id='player1-health' class="health-full">1000</div>
@@ -29,6 +33,7 @@
             <div class="health-container">
             <div id='player2-health' class="health-full">1000</div>
             <div id='player2-damage' class="damage">0</div>
+            <div id='player2-hp' class="player2-hpbar"></div>
         </div>
         </div>
 

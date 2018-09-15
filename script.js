@@ -15,6 +15,27 @@ let playerTwo = {
 let lost = false
 
 
+function resetBattle() {
+lost = false
+playerOne.fullHealth = 1000
+playerOne.lastDamage = 0
+playerTwo.fullHealth = 1000
+playerTwo.lastDamage = 0
+
+document.getElementById('player1-health').innerText = playerOne.fullHealth
+document.getElementById('player1-damage').innerText = playerOne.lastDamage
+document.getElementById('player2-health').innerText = playerTwo.fullHealth
+document.getElementById('player2-damage').innerText = playerTwo.lastDamage
+
+document.getElementById('reset').innerText = ''
+document.getElementById('reset').disabled = true
+
+document.getElementById('status').innerText = 'FIGHT' // refacter defeated player in var
+
+
+
+}
+
 window.addEventListener('keypress', (e) => {
     document.getElementById('player1-health').innerText = playerOne.fullHealth
     document.getElementById('player1-damage').innerText = playerOne.lastDamage
@@ -46,10 +67,14 @@ window.addEventListener('keypress', (e) => {
         playerOne.fullHealth = 0
         lost = true
         document.getElementById('status').innerText = 'GAME OVER PLAYER ONE DEFEATED'
+        document.getElementById('reset').innerText = 'REMATCH' // disabled = false
+        document.getElementById('reset').disabled = false
     } else if (playerTwo.fullHealth <= 0) {
         playerTwo.fullHealth = 0
         lost = true
         document.getElementById('status').innerText = 'GAME OVER PLAYER TWO DEFEATED' // refacter defeated player in var
+        document.getElementById('reset').innerText = 'REMATCH' // disabled = false
+        document.getElementById('reset').disabled = false
     }
     // (lost) ? document.getElementById('status').innerText = 'GAME OVER ${DEFEATED PLAYER} LOST' : console.log('')
 }, false)
