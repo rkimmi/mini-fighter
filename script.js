@@ -12,6 +12,8 @@ let playerTwo = {
     }
 }
 
+let lost = false
+
 
 window.addEventListener('keypress', (e) => {
     document.getElementById('player1-health').innerText = playerOne.fullHealth
@@ -20,6 +22,7 @@ window.addEventListener('keypress', (e) => {
     document.getElementById('player2-damage').innerText = playerTwo.lastDamage
 
     let playerOneHit = false
+    if (!lost) {
     for (var key in playerOne.moves) {
         if (e.key === key) {
             playerOneHit = true
@@ -34,8 +37,19 @@ window.addEventListener('keypress', (e) => {
             if (e.key === key) {
                 playerOne.fullHealth += playerTwo.moves[key]
                 playerOne.lastDamage = playerTwo.moves[key]
-                
             }
         }
     }
+}
+
+    if (playerOne.fullHealth <= 0) {
+        playerOne.fullHealth = 0
+        lost = true
+        document.getElementById('status').innerText = 'GAME OVER PLAYER ONE DEFEATED'
+    } else if (playerTwo.fullHealth <= 0) {
+        playerTwo.fullHealth = 0
+        lost = true
+        document.getElementById('status').innerText = 'GAME OVER PLAYER TWO DEFEATED' // refacter defeated player in var
+    }
+    // (lost) ? document.getElementById('status').innerText = 'GAME OVER ${DEFEATED PLAYER} LOST' : console.log('')
 }, false)
