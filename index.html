@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
 
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+    <title>MINI FIGHTER</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
 
-  <link rel="stylesheet" href="style.css?v=1.0">
+    <link rel="stylesheet" href="style.css?v=1.0">
 
 </head>
 
 <body>
-  <script src="/script.js"></script>
-  <div class="battlefield">
-  <div id='player1' class="player-one"></div>
-  <div id='player1-health' class="health-full"></div>
-  <div id='player2' class="player-two"></div>
-  <div id='player2-health' class="health-full"></div>
-</div>
+    <script src="script.js"></script>
+    <div class="battlefield">
+        <div class="player-container">
+            <div id='player1' class="player-one"></div>
+            <div class="health-container">
+            <div id='player1-health' class="health-full">1000</div>
+            <div id='player1-damage' class="damage">0</div>
+        </div>
+        </div>
+        <div class="player-container">
+            <div id='player2' class="player-two"></div>
+            <div class="health-container">
+            <div id='player2-health' class="health-full">1000</div>
+            <div id='player2-damage' class="damage">0</div>
+        </div>
+        </div>
+    </div>
 </body>
+
 </html>

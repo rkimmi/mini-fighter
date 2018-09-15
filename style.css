@@ -8,16 +8,45 @@
     justify-content: center;
 }
 
-.player-one {
-    background-color: royalblue;
-    width: 40px;
-    height: 100px;
-    margin: 30px;
+.player-container {
+    display: flex;
+    flex-direction: column;
+    /* width: 100px;
+    height: 250px; */
+    justify-content: space-between;
 }
 
-.player-two{
-    background: plum;
-    width: 50px;
-    height: 50px;
+
+.player-one {
+    background-image: url('./playerone.png');
+    width: 200px;
+    height: 200px;
     margin: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
+
+.player-two {
+    background-image: url('./playertwo.png');
+    width: 200px;
+    height: 200px;
+    margin: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.health-container {
+    display: flex;
+    flex-direction: row;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: baseline;
+    font-size: 10px;
+}
+
+.health-full {
+    margin-right: 10px;
+    margin-left: 80px;
+
+}
+
+
